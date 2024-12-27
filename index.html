@@ -5,24 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonix Movies</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Sonix Movies</h1>
+            <h1><i class="fas fa-film"></i> Sonix Movies</h1>
             <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search for a movie...">
-                <button type="submit">Search</button>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search for a movie...">
+                    <button type="button" id="voice-search"><i class="fas fa-microphone"></i></button>
+                </div>
+                <button type="submit"><i class="fas fa-search"></i> Search</button>
             </form>
-            <button id="dark-mode-toggle">Toggle Dark Mode</button>
+            <button id="dark-mode-toggle"><i class="fas fa-moon"></i> Toggle Dark Mode</button>
         </header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html">Popular Movies</a>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="index.html"><i class="fas fa-star"></i> Popular Movies</a>
+            <a href="favorites.html"><i class="fas fa-heart"></i> Favorites</a>
+            <a href="#" id="recommendations-link"><i class="fas fa-thumbs-up"></i> Recommendations</a>
         </nav>
+        <div id="advanced-filters" class="advanced-filters">
+            <button id="toggle-filters">Advanced Filters</button>
+            <div class="filter-options" style="display: none;">
+                <select id="year-filter">
+                    <option value="">Select Year</option>
+                </select>
+                <select id="rating-filter">
+                    <option value="">Select Rating</option>
+                </select>
+            </div>
+        </div>
+        <div id="genre-filter" class="genre-filter"></div>
+        <div id="search-suggestions" class="search-suggestions"></div>
         <div id="movies"></div>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+        </div>
         <div id="error-message" class="error-message"></div>
     </div>
+    <footer>
+        <p>&copy; 2023 Sonix Movies. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
+
